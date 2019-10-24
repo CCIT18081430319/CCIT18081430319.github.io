@@ -89,7 +89,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/15/bule01/" data-id="ck242xyut0000oouczhci9blf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/15/bule01/" data-id="ck248gf6r0002a4ucmymisazn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -121,12 +121,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="STM32Cube-Mx蓝牙功能的相关配置"><a href="#STM32Cube-Mx蓝牙功能的相关配置" class="headerlink" title="STM32Cube Mx蓝牙功能的相关配置"></a>STM32Cube Mx蓝牙功能的相关配置</h2><p><strong>一.打开软件</strong><br>   点击工具栏中的help，选中Manage embedded software packages,下载STM32F4的1.24.1版本的固件包。然后选中STMicroelectronics,下载X_CUBE_BLE1的4.4.0版本的固件包和X_CUBE_MEMS1的6.2.0固件包。<br><strong>二.点击New projiet 进入芯片选择页面</strong><br>   我这里选择的是STM32F401RETx(因为我的芯片就是这个型号，大家可以根据自己芯片的型号进行选择)<br><strong>三.选择芯片后进入工程配置</strong><br>   1.在System Core中配置SWD调试模式。选中SYS,Debug中选择Serial Wire。<img src="/.com//1.jpg" alt="图片如下"><br>   2.在Connectivity中配置全双工模式和串口的异步模式。在SPI1的Mode中选择Full_Duplex              Master(全双工模式)，在下面的Parameter Settings配置时钟参数，在Clock Parameters中配置      Prescaler（预分频器）为4；选择USART1,Mode中选择Asynchronous(异步模式)  <img src="/.com//2.jpg" alt="图片如下">   <img src="/.com//3.jpg" alt="图片如下"><br>   3.点击Additional Software 下方的X_CUBE_BLE1.4.4.0, 然后把Wireless BlueNRG_MS和            Wireless Application都勾选上。然后在Platform Settings下方进行相关配置，根据原理图把        PC4设置为外部中断引脚，所以Exti Line中选择PC4；当初是在SPI1中设置的全双工模式，所以BUS      IO driver中选择的是SPI1;设置PA4和PB1为GPIO_Output,所以CS Line 中选择PA4,Reset Linez      中选择PB1，在BSP USART中选择USART1。<img src="/.com//4.jpg" alt="图片如下"><br>   4.选择芯片上方的System view,然后选中GPIO,在左侧的方格中选择NVIC把EXTI line4 interrruput      勾选上。<img src="/.com//5.jpg" alt="图片如下"><br> <strong>四.点击菜单栏中的Project Manager进入工程配置</strong><br>   命名好工程名称和选择好工程存储路径就可以点击GENERATE CODE生成工程了。（这里强调一下工程名和  工程存储路径中最好都是英文不要存在中文，不然容易出错）进入工程后可以先运行下看看是否是零个错误零个警告，如果是的说明工程建立成功。</p>
+        <h2 id="STM32Cube-Mx蓝牙功能的相关配置"><a href="#STM32Cube-Mx蓝牙功能的相关配置" class="headerlink" title="STM32Cube Mx蓝牙功能的相关配置"></a>STM32Cube Mx蓝牙功能的相关配置</h2><p><strong>一.打开软件</strong><br>   点击工具栏中的help，选中Manage embedded software packages,下载STM32F4的1.24.1版本的固件包。然后选中STMicroelectronics,下载X_CUBE_BLE1的4.4.0版本的固件包和X_CUBE_MEMS1的6.2.0固件包。<br><strong>二.点击New projiet 进入芯片选择页面</strong><br>   我这里选择的是STM32F401RETx(因为我的芯片就是这个型号，大家可以根据自己芯片的型号进行选择)<br><strong>三.选择芯片后进入工程配置</strong><br>   1.在System Core中配置SWD调试模式。选中SYS,Debug中选择Serial Wire。<img src="//yoursite.com/2019/10/15/blue/QQ%E5%9B%BE%E7%89%8720191023120250.png" alt="图片如下"><br>   2.在Connectivity中配置全双工模式和串口的异步模式。在SPI1的Mode中选择Full_Duplex              Master(全双工模式)，在下面的Parameter Settings配置时钟参数，在Clock Parameters中配置      Prescaler（预分频器）为4；选择USART1,Mode中选择Asynchronous(异步模式)  <img src="//yoursite.com/2019/10/15/blue/2.jpg" alt="图片如下">   <img src="//yoursite.com/2019/10/15/blue/3.jpg" alt="图片如下"><br>   3.点击Additional Software 下方的X_CUBE_BLE1.4.4.0, 然后把Wireless BlueNRG_MS和            Wireless Application都勾选上。然后在Platform Settings下方进行相关配置，根据原理图把        PC4设置为外部中断引脚，所以Exti Line中选择PC4；当初是在SPI1中设置的全双工模式，所以BUS      IO driver中选择的是SPI1;设置PA4和PB1为GPIO_Output,所以CS Line 中选择PA4,Reset Linez      中选择PB1，在BSP USART中选择USART1。<img src="//yoursite.com/2019/10/15/blue/4.jpg" alt="图片如下"><br>   4.选择芯片上方的System view,然后选中GPIO,在左侧的方格中选择NVIC把EXTI line4 interrruput      勾选上。<img src="//yoursite.com/2019/10/15/blue/5.jpg" alt="图片如下"><br> <strong>四.点击菜单栏中的Project Manager进入工程配置</strong><br>   命名好工程名称和选择好工程存储路径就可以点击GENERATE CODE生成工程了。（这里强调一下工程名和  工程存储路径中最好都是英文不要存在中文，不然容易出错）进入工程后可以先运行下看看是否是零个错误零个警告，如果是的说明工程建立成功。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/15/blue/" data-id="ck242xyux0001ooucn46up7yg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/15/blue/" data-id="ck248gf6t0003a4ucegeeyc73" class="article-share-link">Share</a>
       
       
     </footer>
@@ -163,7 +163,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/15/hello/" data-id="ck242xyvb0004oouc9lqdoyd4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/15/hello/" data-id="ck248gf6v0004a4ucjzbo173d" class="article-share-link">Share</a>
       
       
     </footer>
@@ -200,7 +200,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/14/helloccit/" data-id="ck242xyuy0002ooucx54nuu7f" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/14/helloccit/" data-id="ck248gf6d0000a4uc4hwts7tz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -249,7 +249,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/14/hello-world/" data-id="ck242xyuz0003ooucxitwzy0d" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/14/hello-world/" data-id="ck248gf6m0001a4ucpxil34a7" class="article-share-link">Share</a>
       
       
     </footer>
